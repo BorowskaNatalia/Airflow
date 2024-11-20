@@ -1,0 +1,12 @@
+version: '3'
+services:
+  airflow:
+    image: apache/airflow:2.6.0
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
